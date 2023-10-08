@@ -8,7 +8,6 @@
 
 using namespace std;
 
-<<<<<<< HEAD
 int main()
 {
     //Welcome Page
