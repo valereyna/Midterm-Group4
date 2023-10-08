@@ -8,4 +8,9 @@
 
 using namespace std;
 
+<<<<<<< HEAD
 int main()
+{
+    //Welcome Page
+    cout << "hello world ini test anjay bisa gkkk";
+}
