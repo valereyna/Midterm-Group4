@@ -1,6 +1,6 @@
-//call the Calculator.cpp and Queue.cpp
-#include "Calculator.cpp"
-#include "Queue.cpp"
+//call the Calculator.h and Queue.h
+#include "Calculator.h"
+#include "Queue.h"
 
 #include <iostream>
 #include <stdlib.h>
