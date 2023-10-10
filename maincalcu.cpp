@@ -102,6 +102,7 @@ int main()
 			}
 			else
 			{
+                cout << endl;
                 cout << "|*******************************************************|\n";
 				cout << "|                No Calculation History                 |\n";
                 cout << "|*******************************************************|\n" << endl;
@@ -112,16 +113,18 @@ int main()
 		else if (ch == 3)
 		{
 			char c;
+            cout << endl;
             cout << "|*******************************************************|\n";
 			cout << "|  All history will be deleted and can not be restored  |\n";
             cout << "|         Enter 1 for continue and 0 for cancel         |\n";
-            cout << "|*******************************************************|\n";
+            cout << "|*******************************************************|\n" << endl;
             cout << "Enter: ";
 			cin >> c;
             
 			// If the user wants to continue, then
 			if (c == '1')
 			{
+                cout << endl;
                 cout << "|*******************************************************|\n";
 				cout << "|              ===== History Deleted =====              |\n";
                 cout << "|*******************************************************|\n" << endl;
