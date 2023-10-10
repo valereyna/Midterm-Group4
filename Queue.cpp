@@ -81,3 +81,4 @@ double Queue::getRear()
 	}
 	return array[rear - 1];
 }
+
