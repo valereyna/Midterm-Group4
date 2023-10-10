@@ -1,6 +1,8 @@
+// Call the header
 #include "Calculator.h"
 #include "Queue.h"
 
+// Call the .cpp file
 #include "assessment.cpp"
 #include "trigonometry.cpp"
 #include "priority.cpp"
@@ -22,58 +24,65 @@ int main()
 	int ch = 1;
 	int key = 0;
 
+    // Welcome Page
     cout << endl;
-	cout << "----------------Scientific Calculator----------------\n";
-	cout << "by Group 4: Ferry, Leonard, Michelle, Melinda, Reyna\n" << endl;
-
-	cout << "Input requirements:\n";
-	cout << "1. Addition       = a + b\n";
-	cout << "2. Subtraction    = a - b\n";
-	cout << "3. Multiplication = a * b\n";
-	cout << "4. Division       = a / b\n";
-	cout << "5. Trigonometry   = sin(x), cos(x), tan(x)\n";
-	cout << "6. Square root    = r(a)\n";
-	cout << "7. Exponent       = a^b\n";
-	cout << "8. Logarithm      = log(a)\n";
-	cout << "9. Natural log    = ln(a)\n" << endl;
-
-	cout << "Additional Information:\n";
-	cout << "- You can input up to 10 variables\n";
-	cout << "- Use ( ) for priority\n";
-	cout << "- a and b can be integer or decimal\n";
-	cout << "- x is in degrees\n" << endl;
+    cout << "|*******************************************************|\n";
+	cout << "|-----------------Scientific Calculator-----------------|\n";
+	cout << "| by Group 4: Ferry, Leonard, Michelle, Melinda, Reyna  |\n";
+    cout << "|*******************************************************|\n";
+	cout << "|                  Input requirements:                  |\n";
+    cout << "|               1. Addition       = a + b               |\n";
+	cout << "|               2. Subtraction    = a - b               |\n";
+	cout << "|               3. Multiplication = a * b               |\n";
+	cout << "|               4. Division       = a / b               |\n";
+	cout << "|       5. Trigonometry   = sin(x), cos(x), tan(x)      |\n";
+	cout << "|               6. Square root    = r(a)                |\n";
+	cout << "|               7. Exponent       = a^b                 |\n";
+	cout << "|               8. Logarithm      = log(a)              |\n";
+	cout << "|               9. Natural log    = ln(a)               |\n";
+    cout << "|*******************************************************|\n";
+	cout << "|                Additional Information:                |\n";
+	cout << "|           - You can input up to 10 variables          |\n";
+	cout << "|           - Use () for priority                       |\n";
+	cout << "|           - a and b can be integer or decimal         |\n";
+	cout << "|           - x is in degrees                           |\n";
+    cout << "|*******************************************************|\n" << endl; 
 
     do
 	{
-		cout << "Enter to Start!";
+	cout << "Enter to Start!";
 	}
 	while (cin.get() != '\n');
 
     // Program directory
     i: // For looping
-	cout << "\nDirectory:" << endl;
-	cout << "1 = Calculate a Problem" << endl;
-	cout << "2 = Check History" << endl;
-	cout << "3 = Clear History" << endl;
-	cout << "0 = Exit Calculator" << endl;
-
-	cout << "\nEnter command: ";
-	cin >> ch;
+    cout << endl;
+    cout << "|*******************************************************|\n";
+	cout << "|               What Do You Want To Do?:                |\n";
+	cout << "|           1 - Use The Scientific Calculator           |\n";
+	cout << "|           2 - Check History                           |\n";
+	cout << "|           3 - Delete History                          |\n";
+	cout << "|           0 - END!                                    |\n";
+    cout << "|*******************************************************|\n" << endl;
+	cout << "Enter Option Here: ";
+    cin >> ch;
 
 	while (ch != 0)
 	{
-		// The calculator
+		// Calculator
 		if (ch == 1)
 		{
-			cout << "\nEnter math problems: ";
+			cout << "\nInsert your math problems here: ";
 			cin.ignore();
 			getline(cin, problems);
 			history[key++] = result_value = calculator.assessment(problems);
-			cout << "Answer= " << result_value << endl;
+			cout << "Answer: " << result_value << endl;
+
 			do
 			{
-				cout << "\nEnter to return to directory.";
-			} while (cin.get() != '\n');
+				cout << "\nEnter to continue . . .";
+			}
+            while (cin.get() != '\n');
 		}
 
 		// Printing history
@@ -82,28 +91,41 @@ int main()
 			// Key as the index
 			if (key != 0)
 			{
-				cout << "\nCalculator History: " << endl;
+                cout << endl;
+                cout << "|*******************************************************|\n";
+				cout << "|                       History:                        |\n";
+                cout << "|*******************************************************|\n";
 				for (int i = 0; i < key; i++)
 				{
-					cout << "\t" << i + 1 << ". " << history[i] << endl;
+				cout << "\t" << i + 1 << ". " << history[i] << "\n";
 				}
 			}
 			else
 			{
-				cout << "\nNo Calculation History\n";
+                cout << "|*******************************************************|\n";
+				cout << "|                No Calculation History                 |\n";
+                cout << "|*******************************************************|\n" << endl;
 			}
 		}
 
-		// Clearing history
+		// Delete history
 		else if (ch == 3)
 		{
 			char c;
-			cout << "\nAll history will be deleted and can not be restored, continue?\nEnter 1 for continue and 0 for cancel:" << endl;
+            cout << "|*******************************************************|\n";
+			cout << "|  All history will be deleted and can not be restored  |\n";
+            cout << "|         Enter 1 for continue and 0 for cancel         |\n";
+            cout << "|*******************************************************|\n";
+            cout << "Enter: ";
 			cin >> c;
+            
 			// If the user wants to continue, then
 			if (c == '1')
 			{
-				cout << "\n===History Cleared===" << endl;
+                cout << "|*******************************************************|\n";
+				cout << "|              ===== History Deleted =====              |\n";
+                cout << "|*******************************************************|\n" << endl;
+
 				// Deleting history contents with loop
 				for (int i = 0; i < key; i++)
 				{
@@ -119,10 +141,13 @@ int main()
 				continue;
 			}
 		}
+
 		// If the user inputs an invalid command
 		else
 		{
-			cout << "Invalid Command." << endl;
+            cout << "|*******************************************************|\n";
+			cout << "|                    Invalid Command                    |\n";
+            cout << "|*******************************************************|\n" << endl;
 		}
 		// Go back to directory
 		goto i;
@@ -132,11 +157,20 @@ int main()
 	if (ch == 0)
 	{
 		char c;
-		cout << "\n\n!!!Confirm End Program!!!\nEnter 0 to confirm exit and 1 to cancel" << endl;
+        cout << endl;
+        cout << "|*******************************************************|\n";
+		cout << "|                Do you want to exit?:(                 |\n";
+        cout << "|        Enter 0 to confirm exit and 1 to cancel        |\n";
+        cout << "|*******************************************************|\n" << endl;
+        cout << "Enter: ";
 		cin >> c;
+
 		if (c == '0')
 		{
-			cout << "\n\n\n\n\n\nThank you for using this calculator, Goodbye!" << endl;
+            cout << endl;
+		    cout << "|*******************************************************|\n";
+            cout << "|                 Thank You & Good Bye!                 |\n";
+            cout << "|*******************************************************|\n";
 		}
 		else
 			goto i;
