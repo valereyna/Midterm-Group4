@@ -1,6 +1,11 @@
 #include "Calculator.h"
-#include "Queue.cpp"
+#include "Queue.h"
+
 #include "assessment.cpp"
+#include "trigonometry.cpp"
+#include "priority.cpp"
+#include "operation.cpp"
+#include "Queue.cpp"
 
 #include <iostream>
 #include <stdlib.h>
